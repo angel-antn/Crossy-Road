@@ -14,20 +14,23 @@ class Player(Turtle):
         self.setheading(90)
 
     def move_right(self):
-        self.setheading(0)
-        self.forward(MOVE_DISTANCE)
+        if self.xcor() < 280:
+            self.setheading(0)
+            self.forward(MOVE_DISTANCE)
 
     def move_up(self):
         self.setheading(90)
         self.forward(MOVE_DISTANCE)
 
     def move_left(self):
-        self.setheading(180)
-        self.forward(MOVE_DISTANCE)
+        if self.xcor() > -280:
+            self.setheading(180)
+            self.forward(MOVE_DISTANCE)
 
     def move_down(self):
-        self.setheading(270)
-        self.forward(MOVE_DISTANCE)
+        if self.ycor() > -280:
+            self.setheading(270)
+            self.forward(MOVE_DISTANCE)
 
     def to_start(self):
         self.goto(x=-350, y=self.ycor())
